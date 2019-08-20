@@ -8,15 +8,20 @@ using System.Collections;
 
 namespace UnityChan
 {
-// 必要なコンポーネントの列記
-	[RequireComponent(typeof(Animator))]
-	[RequireComponent(typeof(CapsuleCollider))]
-	[RequireComponent(typeof(Rigidbody))]
+    // 必要なコンポーネントの列記
+    [RequireComponent(typeof(Animator))]
+    [RequireComponent(typeof(CapsuleCollider))]
+    [RequireComponent(typeof(Rigidbody))]
+
 
 	public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 	{
-
-		public float animSpeed = 1.5f;				// アニメーション再生速度設定
+        private bool isJump = false;
+        private bool isFirstPress = true;
+        private float firstPressTime;
+        public float dashWindow;
+        public float dashSpeed;
+        public float animSpeed = 1.5f;				// アニメーション再生速度設定
 		public float lookSmoother = 3.0f;			// a smoothing setting for camera motion
 		public bool useCurves = true;				// Mecanimでカーブ調整を使うか設定する
 		// このスイッチが入っていないとカーブは使われない
@@ -90,17 +95,28 @@ namespace UnityChan
 				velocity *= backwardSpeed;	// 移動速度を掛ける
 			}
 		
-			if (Input.GetButtonDown ("Jump")) {	// スペースキーを入力したら
-
-				//アニメーションのステートがLocomotionの最中のみジャンプできる
-				if (currentBaseState.nameHash == locoState) {
+			if (Input.GetButtonDown ("Jump") && isFirstPress) {	// スペースキーを入力したら
+                isFirstPress = false;
+                firstPressTime = Time.time;
+                //アニメーションのステートがLocomotionの最中のみジャンプできる
+                if (currentBaseState.nameHash == locoState) {
 					//ステート遷移中でなかったらジャンプできる
 					if (!anim.IsInTransition (0)) {
 						rb.AddForce (Vector3.up * jumpPower, ForceMode.VelocityChange);
 						anim.SetBool ("Jump", true);		// Animatorにジャンプに切り替えるフラグを送る
 					}
 				}
-			}
+			}else if(Input.GetButtonDown("Jump") && !isFirstPress && Time.time - firstPressTime <= dashWindow)
+            {
+                Debug.Log("is dash" + new Vector3(v, 0, h));
+                isFirstPress = true;
+               
+                rb.velocity = gameObject.transform.forward * dashSpeed;
+            }
+            else if(Time.time - firstPressTime > dashWindow)
+            {
+                isFirstPress = true;
+            }
 		
 
 			// 上下のキー入力でキャラクターを移動させる
