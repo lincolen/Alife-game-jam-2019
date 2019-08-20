@@ -27,6 +27,7 @@ public class InstnitateObject : MonoBehaviour
             // plant.GetComponent<PlantGrowth>.growthSpeed = 2;
             plant.GetComponent<PlantGrowth>().lifeTime = lifeTime;
             plant.GetComponent<PlantGrowth>().growthSpeed = growthSpeed;
+           // plant.GetComponent<Rigidbody>().detectCollisions = false;
         }
     }
 }

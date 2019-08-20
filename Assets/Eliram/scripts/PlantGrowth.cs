@@ -33,6 +33,7 @@ public class PlantGrowth : MonoBehaviour
         {
             gameObject.GetComponent<Renderer>().material.color += new Color(colorChangeSpeed, 0.0f, 0.0f, -5.0f);
             gameObject.GetComponent<Transform>().Rotate(50/witherSpan/60, 0, 0);
+            gameObject.GetComponent<Rigidbody>().detectCollisions  = false ;
         }
     }
 
