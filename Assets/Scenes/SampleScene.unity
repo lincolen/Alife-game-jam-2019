@@ -305,6 +305,7 @@ GameObject:
   - component: {fileID: 1767282757}
   - component: {fileID: 1767282756}
   - component: {fileID: 1767282755}
+  - component: {fileID: 1767282758}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -369,3 +370,90 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1767282758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767282754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4531ff2a79e8c8c4e9a70e7d5b874e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolModeInt: 0
+  erosionTypeInt: 3
+  generatorTypeInt: 2
+  isBrushOn: 0
+  isBrushHidden: 0
+  isBrushPainting: 0
+  brushPosition: {x: 0, y: 0, z: 0}
+  brushSize: 50
+  brushOpacity: 1
+  brushSoftness: 0.5
+  neighbourhoodInt: 0
+  useDifferenceMaps: 1
+  thermalIterations: 5
+  thermalMinSlope: 15
+  thermalFalloff: 0.5
+  hydraulicTypeInt: 1
+  hydraulicIterations: 12
+  hydraulicMaxSlope: 60
+  hydraulicFalloff: 0.5
+  hydraulicRainfall: 0.01
+  hydraulicEvaporation: 0.5
+  hydraulicSedimentSolubility: 0.01
+  hydraulicSedimentSaturation: 0.1
+  hydraulicVelocityRainfall: 0.01
+  hydraulicVelocityEvaporation: 0.5
+  hydraulicVelocitySedimentSolubility: 0.01
+  hydraulicVelocitySedimentSaturation: 0.1
+  hydraulicVelocity: 20
+  hydraulicMomentum: 1
+  hydraulicEntropy: 0
+  hydraulicDowncutting: 0.1
+  tidalIterations: 25
+  tidalSeaLevel: 150
+  tidalRangeAmount: 90
+  tidalCliffLimit: 45
+  windIterations: 5
+  windDirection: 180
+  windForce: 0.5
+  windLift: 0.01
+  windGravity: 0.5
+  windCapacity: 0.5
+  windEntropy: 0.1
+  windSmoothing: 1
+  terrainLayers:
+  - {fileID: 8574412962073106934, guid: ad87e9d35c8fc2b4f814725de623ea8a, type: 2}
+  - {fileID: 8574412962073106934, guid: b04d67162e77f0e49b1834713e5b5b25, type: 2}
+  - {fileID: 8574412962073106934, guid: 263710e1b225b9a4d935edbf59b33705, type: 2}
+  - {fileID: 8574412962073106934, guid: 624cd87d0fa49ea46bfc2fcf7ae6394c, type: 2}
+  - {fileID: 8574412962073106934, guid: 0bfad2edf4e385e49bdce1db5b3cdf01, type: 2}
+  slopeBlendMinAngle: 30
+  slopeBlendMaxAngle: 45
+  heightBlendPoints:
+  - 0.025
+  - 0.05
+  - 0.06
+  - 0.07
+  - 0.125
+  - 0.15
+  gradientStyles: []
+  voronoiTypeInt: 1
+  voronoiCells: 10
+  voronoiFeatures: 1
+  voronoiScale: 0.75
+  voronoiBlend: 0.25
+  diamondSquareDelta: 0.5
+  diamondSquareBlend: 1
+  perlinFrequency: 11
+  perlinAmplitude: 1
+  perlinOctaves: 7
+  perlinBlend: 0.05
+  smoothBlend: 0.25
+  smoothIterations: 1
+  normaliseMin: 0
+  normaliseMax: 1
+  normaliseBlend: 1
