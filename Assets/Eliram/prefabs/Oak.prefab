@@ -98,7 +98,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   growthSpeed: 0.001
   initialScale: 0.1
-  lifeTime: 5
+  lifeTime: 3
+  colorChangeSpeed: 0.05
+  witherSpan: 1
 --- !u!1 &2231395931961833881
 GameObject:
   m_ObjectHideFlags: 0
