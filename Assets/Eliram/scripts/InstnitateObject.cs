@@ -7,8 +7,10 @@ public class InstnitateObject : MonoBehaviour
     public GameObject[] prefabs;
     public float popInterval;
     private float lastPop;
-    public float growthSpeed;
-    public float lifeTime;
+    public float minGrowthSpeed;
+    public float MaxGrowthSpeed;
+    public float minLifeTime;
+    public float maxLifeTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +27,8 @@ public class InstnitateObject : MonoBehaviour
             GameObject plant = Instantiate(prefabs[Random.Range(0, 7) % 8], new Vector3(Random.Range(0.0f,1000.0f), 0.0f, Random.Range(0.0f, 1000.0f)), Quaternion.identity) as GameObject;
             // plant.GetComponent<PlantGrowth>.lifeTime = 20;
             // plant.GetComponent<PlantGrowth>.growthSpeed = 2;
-            plant.GetComponent<PlantGrowth>().lifeTime = lifeTime;
-            plant.GetComponent<PlantGrowth>().growthSpeed = growthSpeed;
+            plant.GetComponent<PlantGrowth>().lifeTime = Random.Range(minLifeTime, maxLifeTime);
+            plant.GetComponent<PlantGrowth>().growthSpeed = Random.Range(minGrowthSpeed, MaxGrowthSpeed);
            // plant.GetComponent<Rigidbody>().detectCollisions = false;
         }
     }
