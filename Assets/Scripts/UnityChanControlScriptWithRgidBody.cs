@@ -111,7 +111,7 @@ namespace UnityChan
                 Debug.Log("is dash" + new Vector3(v, 0, h));
                 isFirstPress = true;
                
-                rb.velocity = gameObject.transform.forward * dashSpeed;
+                rb.velocity = (gameObject.transform.forward * dashSpeed) + new Vector3(0.0f, rb.velocity.y, 0.0f);
             }
             else if(Time.time - firstPressTime > dashWindow)
             {
