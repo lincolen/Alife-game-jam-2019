@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -278,6 +278,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8519573725105376614, guid: b57e03bbef8d24b4d831be92bdff48d4,
+        type: 3}
+      propertyPath: smooth
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b57e03bbef8d24b4d831be92bdff48d4, type: 3}
 --- !u!1 &1549286414
@@ -319,8 +324,10 @@ MonoBehaviour:
   - {fileID: 1579015187254384832, guid: ec88cc1fe30c88b409687241a25d72fd, type: 3}
   - {fileID: 2231395931632532331, guid: 221d821f4f9572c42ae8172784b60d55, type: 3}
   popInterval: 2
-  growthSpeed: 0
-  lifeTime: 0
+  minGrowthSpeed: 0.9
+  MaxGrowthSpeed: 1.1
+  minLifeTime: 8
+  maxLifeTime: 15
 --- !u!4 &1549286416
 Transform:
   m_ObjectHideFlags: 0
@@ -762,6 +769,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206601293125799911, guid: e52472cc67ff1304195770530ff8e84e,
+        type: 3}
+      propertyPath: jumpPower
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e52472cc67ff1304195770530ff8e84e, type: 3}
