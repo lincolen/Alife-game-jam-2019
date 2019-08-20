@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e2da7020e6f609438573c5526e24d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  growthSpeed: 0.001
+  growthSpeed: 2
   initialScale: 0.1
   lifeTime: 3
   colorChangeSpeed: 0.05
