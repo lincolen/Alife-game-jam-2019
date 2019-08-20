@@ -1,6 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/TakeuchiYuta.meta~HEAD.meta
+<<<<<<< HEAD
+guid: aa9adadef156928b7a0c06758d991708
+=======
+guid: 69c1a291cde94d745aa739eb359d4416
+>>>>>>> 219f1bc4f211e802e123530c866d91dd7b8ed861
+=======
 guid: 1a136771cc5434c458fdb21be4e69fd5
 folderAsset: yes
+>>>>>>> 03a1d92be71f1183db503b660322abe3f9f6c036:Assets/Scripts.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
